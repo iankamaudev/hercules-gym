@@ -37,12 +37,10 @@ function TrainerBox() {
           >
             {/* trainer img */}
             <img
-              src={train.img}
-              alt="trainer"
-              style={{ transition: "all 0.3s" }}
-              className={`w-[25rem] z-10 relative grayscale mx-auto ${
-                imgHover ? "hover:grayscale-0" : ""
-              }`}
+            src={train.img}
+            alt="trainer"
+            style={{ transition: "all 0.3s" }}
+            className={`w-[25rem] z-10 relative mx-auto`}
             />
             {/* trainer bg */}
             <img
