@@ -2,27 +2,10 @@ import { useState } from "react";
 import Logo from "../../images/logo/logo.png";
 import NavList from "../Nav/NavList";
 import { Link } from "react-router-dom";
-import LogoSide from "../../images/logo/logo-footer.svg";
-import SideImg1 from "../../images/sidebar/1.jpg";
-import SideImg2 from "../../images/sidebar/2.jpg";
-import SideImg3 from "../../images/sidebar/3.jpg";
-import SideImg4 from "../../images/sidebar/4.jpg";
-import SideImg5 from "../../images/sidebar/5.jpg";
-import SideImg6 from "../../images/sidebar/6.jpg";
 
 function Navbar() {
-  const [spin, setSpin] = useState(false);
   const [sticky, setSticky] = useState(false);
-  const [sidebar, setSideBar] = useState(false);
   const [hamburger, setHamburger] = useState(false);
-
-  const joinSpin = () => {
-    setSpin(true);
-  };
-
-  const stopSpin = () => {
-    setSpin(false);
-  };
 
   // sticky navbar - bg black
   const handleScroll = () => {
@@ -85,7 +68,7 @@ function Navbar() {
                 <li onClick={hamburgerMenu}>
                   <a
                     onClick={() => window.top(0, 0)}
-                    className="text-[2rem] font-medium hover:text-[#007FFF] ease-in duration-200"
+                    className="text-[2rem] font-medium text-[#007FFF] ease-in duration-200"
                     href="/#home"
                   >
                     Home
@@ -94,7 +77,7 @@ function Navbar() {
                 <li onClick={hamburgerMenu}>
                   <Link
                     onClick={() => window.top(0, 0)}
-                    className="text-[2rem] font-medium hover:text-[#007FFF] ease-in duration-200"
+                    className="text-[2rem] font-medium text-[#007FFF] ease-in duration-200"
                     to="/about"
                   >
                     About
@@ -103,7 +86,7 @@ function Navbar() {
                 <li onClick={hamburgerMenu}>
                   <Link
                     onClick={() => window.top(0, 0)}
-                    className="text-[2rem] font-medium hover:text-[#007FFF] ease-in duration-200"
+                    className="text-[2rem] font-medium text-[#007FFF] ease-in duration-200"
                     to="/schedule/monday"
                   >
                     Schedule
@@ -112,7 +95,7 @@ function Navbar() {
                 <li onClick={hamburgerMenu}>
                   <Link
                     onClick={() => window.top(0, 0)}
-                    className="text-[2rem] font-medium hover:text-[#007FFF] ease-in duration-200"
+                    className="text-[2rem] font-medium text-[#007FFF] ease-in duration-200"
                     to="/gallery/page-1"
                   >
                     Gallery
@@ -121,7 +104,7 @@ function Navbar() {
                 <li onClick={hamburgerMenu}>
                   <Link
                     onClick={() => window.top(0, 0)}
-                    className="text-[2rem] font-medium hover:text-[#007FFF] ease-in duration-200"
+                    className="text-[2rem] font-medium text-[#007FFF] ease-in duration-200"
                     to="/contact"
                   >
                     Contact
@@ -130,7 +113,7 @@ function Navbar() {
                 <li onClick={hamburgerMenu}>
                   <Link
                     onClick={() => window.top(0, 0)}
-                    className="text-[2rem] font-medium hover:text-[#007FFF] ease-in duration-200"
+                    className="text-[2rem] font-medium text-[#007FFF] ease-in duration-200"
                     to="/pricing"
                   >
                     Pricing
@@ -139,7 +122,7 @@ function Navbar() {
                 <li onClick={hamburgerMenu}>
                   <Link
                     onClick={() => window.top(0, 0)}
-                    className="text-[2rem] font-medium hover:text-[#007FFF] ease-in duration-200"
+                    className="text-[2rem] font-medium text-[#007FFF] ease-in duration-200"
                     to="/classes"
                   >
                     Classes
@@ -164,16 +147,13 @@ function Navbar() {
             <Link
               onClick={goTop}
               to={"/contact"}
-              onMouseEnter={joinSpin}
-              onMouseLeave={stopSpin}
               className="flex items-center "
             >
               <i
-                className={`fa-solid fa-plus bg-[#007FFF] text-white text-2xl py-3 px-4 rounded-md ${spin ? "nav-btn-hover" : ""
-                  }`}
+                className={`fa-solid fa-plus bg-[#007FFF] text-white text-2xl py-3 px-4 rounded-md`}
               ></i>
-              <h3 className="text-white text-[14px] font-bold uppercase ml-4 mr-8 tracking-wider">
-                join class now
+              <h3 className="text-white text-[14px] ml-4 mr-8 tracking-wider">
+                JOIN CLASS NOW
               </h3>
             </Link>
           </div>

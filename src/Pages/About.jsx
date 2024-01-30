@@ -15,7 +15,7 @@ function About() {
     <>
       <section className="login-section">
         <div className="login-banner relative justify-center flex">
-          <h1 className="text-white absolute bottom-[25px] text-[3rem] font-bold">
+          <h1 className="text-white absolute bottom-[10px] text-[3rem] font-bold">
             About Us
           </h1>
         </div>

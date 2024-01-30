@@ -1,3 +1,4 @@
+import React, { useState } from 'react';
 import TestimonialImg from "../../images/testimonials/testimonial-new.jpg";
 import TitleBg from "../../images/pricing/titlebg.svg";
 import TestimonialBoxes from "./TestimonialBoxes";
@@ -8,6 +9,21 @@ import Logo4 from "../../images/testimonials/logo4.png";
 import Logo5 from "../../images/testimonials/logo5.png";
 
 function Testimonials() {
+  const [currentIndex, setCurrentIndex] = useState(0);
+
+  const handleButtonClick = (direction) => {
+    const lastIndex = 4; // Adjust based on the number of logos
+    let newIndex = currentIndex;
+
+    if (direction === 'left') {
+      newIndex = (currentIndex - 1 + lastIndex) % lastIndex;
+    } else {
+      newIndex = (currentIndex + 1) % lastIndex;
+    }
+
+    setCurrentIndex(newIndex);
+  };
+
   return (
     <>
       {/* testimonials div */}
@@ -47,6 +63,7 @@ function Testimonials() {
                   title="left"
                   style={{ transition: "all 0.2s" }}
                   className="py-5 px-7 bg-white text-black text-2xl hover:bg-[#007FFF] hover:text-white"
+                  onClick={() => this.handleClick('left')}
                 >
                   <i className="fa-solid fa-arrow-left"></i>
                 </button>
@@ -54,6 +71,7 @@ function Testimonials() {
                   title="right"
                   style={{ transition: "all 0.2s" }}
                   className="py-5 px-7 bg-white text-black text-2xl hover:bg-[#007FFF] hover:text-white"
+                  onClick={() => this.handleClick('right')}
                 >
                   <i className="fa-solid fa-arrow-right"></i>
                 </button>
