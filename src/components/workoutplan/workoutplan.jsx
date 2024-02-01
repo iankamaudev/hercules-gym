@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import DatePicker from 'react-datepicker';
 import 'react-datepicker/dist/react-datepicker.css';
+import './workout.css';
 
 const WorkoutPlan = () => {
   const [workoutPlans, setWorkoutPlans] = useState([]);
@@ -80,10 +81,10 @@ const WorkoutPlan = () => {
     }
   };
 
-  const handleDelete = async () => {
+  const handleDelete = async (planId) => {
     try {
-      if (selectedPlan.id) {
-        await axios.delete(`http://localhost:5000/workout-plans/${selectedPlan.id}`);
+      if (planId) {
+        await axios.delete(`http://localhost:5000/workout-plans/${planId}`);
         const response = await axios.get('http://localhost:5000/workout-plans');
         setWorkoutPlans(response.data);
 
@@ -99,7 +100,7 @@ const WorkoutPlan = () => {
   };
 
   return (
-    <div className="max-w-2xl mx-auto mt-8">
+    <div id="workout" className="max-w-2xl mx-auto mt-8">
       <h2 className="text-3xl font-bold mb-4">Workout Plans</h2>
       <table className="w-full border-collapse border border-gray-300">
         <thead>
@@ -127,7 +128,7 @@ const WorkoutPlan = () => {
                 </button>
                 <button
                   className="bg-red-500 text-white px-3 py-1 rounded"
-                  onClick={handleDelete}
+                  onClick={() => handleDelete(plan.id)}
                 >
                   Delete
                 </button>
@@ -193,7 +194,7 @@ const WorkoutPlan = () => {
           />
         </label>
 
-        <button
+        <button id="save_btn"
           onClick={handleSave}
           className="bg-green-500 text-white px-4 py-2 rounded"
         >
