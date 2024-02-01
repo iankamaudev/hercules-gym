@@ -87,9 +87,9 @@ function Navbar() {
                   <Link
                     onClick={() => window.top(0, 0)}
                     className="text-[2rem] font-medium text-[#007FFF] ease-in duration-200"
-                    to="/schedule/monday"
+                    to="/workout"
                   >
-                    Schedule
+                    My workout
                   </Link>
                 </li>
                 <li onClick={hamburgerMenu}>

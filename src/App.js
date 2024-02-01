@@ -8,14 +8,15 @@ import { Route, Routes } from "react-router-dom";
 import { AuthContextProvider } from "./context/AuthContext";
 import Classes from "./Pages/Classes";
 import Price from "./Pages/Price";
-import Schedule from "./Pages/Schedule/Schedule";
-import Monday from "./Pages/Schedule/Monday";
-import Tuesday from "./Pages/Schedule/Tuesday";
-import Wednesday from "./Pages/Schedule/Wednesday";
-import Thursday from "./Pages/Schedule/Thursday";
-import Friday from "./Pages/Schedule/Friday";
-import Saturday from "./Pages/Schedule/Saturday";
-import Sunday from "./Pages/Schedule/Sunday";
+import WorkoutPlan from "./components/workoutplan/workoutplan";
+// import Schedule from "./Pages/Schedule/Schedule";
+// import Monday from "./Pages/Schedule/Monday";
+// import Tuesday from "./Pages/Schedule/Tuesday";
+// import Wednesday from "./Pages/Schedule/Wednesday";
+// import Thursday from "./Pages/Schedule/Thursday";
+// import Friday from "./Pages/Schedule/Friday";
+// import Saturday from "./Pages/Schedule/Saturday";
+// import Sunday from "./Pages/Schedule/Sunday";
 import Gallery from "./Pages/Gallery/Gallery";
 import GalleryPage1 from "./Pages/Gallery/GalleryPage1";
 import GalleryPage2 from "./Pages/Gallery/GalleryPage2";
@@ -34,8 +35,9 @@ function App() {
           <Route path="classes" element={<Classes />} />
           <Route path="pricing" element={<Price />} />
           <Route path="about" element={<About />} />
+          <Route path="workout" element={<WorkoutPlan />} />
 
-          <Route path="schedule" element={<Schedule />}>
+          {/* <Route path="schedule" element={<Schedule />}>
             <Route path="monday" element={<Monday />} />
             <Route path="tuesday" element={<Tuesday />} />
             <Route path="wednesday" element={<Wednesday />} />
@@ -43,7 +45,7 @@ function App() {
             <Route path="friday" element={<Friday />} />
             <Route path="saturday" element={<Saturday />} />
             <Route path="sunday" element={<Sunday />} />
-          </Route>
+          </Route> */}
 
           <Route path="gallery" element={<Gallery />}>
             <Route path="page-1" element={<GalleryPage1 />} />
